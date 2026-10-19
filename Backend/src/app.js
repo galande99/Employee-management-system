@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "employee-management-system-pi-tawny.vercel.app",
+      "https://employee-management-system-pi-tawny.vercel.app/",
     ],
     credentials: true,
   }),
