@@ -9,10 +9,20 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://employee-management-system-pi-tawny.vercel.app/",
-    ],
+    origin: (origin, callback) => {
+      console.log("Incoming origin:", origin);
+
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "https://employee-management-system-pi-tawny.vercel.app",
+      ];
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`Origin not allowed: ${origin}`));
+      }
+    },
     credentials: true,
   }),
 );
