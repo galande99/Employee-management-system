@@ -8,9 +8,9 @@ export const getEmployees = (params = {})=>{
 };
 
 
-export const createEmplyee = (data)=>{
-    return api.post("/employees",data);
-}
+export const createEmplyee = (data) => {
+  return api.post("/employees", data);
+};
 
 export const updateEmployee = (id,data)=>{
     return api.put(`/employees/${id}`,data)
