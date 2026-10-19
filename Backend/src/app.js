@@ -7,25 +7,17 @@ const employeeRoutes = require("./routes/employeeRoutes");
 
 const app = express();
 
+
 app.use(
   cors({
-    origin: (origin, callback) => {
-      console.log("Incoming origin:", origin);
-
-      const allowedOrigins = [
-        "http://localhost:5173",
-        "https://employee-management-system-pi-tawny.vercel.app",
-      ];
-
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error(`Origin not allowed: ${origin}`));
-      }
-    },
+    origin: [
+      "http://localhost:5173",
+      "https://employee-management-system-pi-tawny.vercel.app",
+    ],
     credentials: true,
   }),
 );
+
 
 app.use(express.json());
 app.use(cookieParser());
