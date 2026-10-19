@@ -69,7 +69,7 @@ Configure the following variables:
 
 ```env
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+JWT_SECRET=Secret key used to sign and verify JWT tokens
 ```
 
 ### 3. Set up the frontend
